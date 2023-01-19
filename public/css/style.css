@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.container {
+    background-color: #2ca9ec;
+    margin: 5px;
+    padding: 5px;
+    width: 40%;
+}
+
+input {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 15px;
+}
