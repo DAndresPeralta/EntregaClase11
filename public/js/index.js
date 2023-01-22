@@ -1,13 +1,40 @@
 const socket = io();
 
-const p1 = {
-    id: 6,
-    title: "Producto 6",
-    description: "Este es un producto prueba",
-    price: 550,
-    thumbnail: "Imagen no disponible",
-    code: "qeg421",
-    stock: 75
-}
+const btn = document.getElementById("btn");
+const btnDelete = document.getElementById("btn-delete");
 
-socket.emit("message", p1);
+const inputTitle = document.getElementById("Title");
+const inputDesc = document.getElementById("Desc");
+const inputPrice = document.getElementById("Price");
+const inputCode = document.getElementById("Code");
+const inputStock = document.getElementById("Stock");
+
+const inputDelete = document.getElementById("id");
+
+btn.addEventListener('click', (e) => {
+    const title = inputTitle.value;
+    const desc = inputDesc.value;
+    const price = inputPrice.value;
+    const code = inputCode.value;
+    const stock = inputStock.value;
+
+    if (title !== '' && price !== '') {
+        socket.emit("productoAgregado", {
+            "title": title,
+            "desc": desc,
+            "code": code,
+            "price": price,
+            "stock": stock
+        });
+    };
+});
+
+btnDelete.addEventListener('click', () => {
+    const id = inputDelete.value;
+
+    if (id !== '') {
+        socket.emit("productoEliminado", {
+            "id": id
+        });
+    };
+});
